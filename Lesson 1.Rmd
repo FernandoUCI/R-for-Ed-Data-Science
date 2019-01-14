@@ -2,11 +2,7 @@
 title: "R Workshop for Education Data Science Lesson 1"
 author: "Fernando Rodriguez"
 date: "1/10/2019"
-output:
-  html_document: default
-  pdf_document: default
-editor_options:
-  chunk_output_type: inline
+output: rmarkdown::github_document
 ---
 <br>
 
