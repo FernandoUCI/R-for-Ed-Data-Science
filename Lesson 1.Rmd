@@ -1,0 +1,267 @@
+---
+title: "R Workshop for Education Data Science Lesson 1"
+author: "Fernando Rodriguez"
+date: "1/10/2019"
+output:
+  html_document: default
+  pdf_document: default
+editor_options:
+  chunk_output_type: inline
+---
+<br>
+
+## Table of Contents
+1. Loading Libraries
+2. Creating and running code-chunks in R-Markdown
+3. The basics
+    - Simple calculations
+    - Assignment
+4. Exploring Data
+    - head() 
+5. Graphic Data
+    - plot()
+6. A Note on Arguments
+7. Intro to ggplot2 library and functions
+    - aes()
+    - geom()
+    - theme()
+    - labs()
+    - scale_color_gradient()
+    - facet_grid()
+8. Learning More About Libraries and Functions
+  
+
+
+## 1. Loading Libraries
+First, let's load the libraries you will use for this lesson. This is the first
+thing you should do when writing an R-Markdown document. That way, you ensure
+that you load all of the necessary libraries prior to running code
+```{r}
+# install.libraries("gglot2") <- installing libraries require double qoutations ""
+library(ggplot2) # <- loading libraries doesn't require double qoutations
+```
+<br><br>
+
+Before going into the ins-and-outs of coding in R, let's get familiar with
+how we can use R-markdown to create chunks of code.<br>
+
+## 2. Creating code chunks in R-Markdown
+alt + command + i (mac)<br>
+control + alt + i (windows)<br>
+
+Each chunk of code can be run individually.
+```{r}
+3 + 3
+```
+
+### Running chunnks
+You can run the chunk of code by clicking on the green arrow to the right
+of the code. 
+
+Or use theses shortcuts<br)
+command + enter (mac)<br>
+control + enter (windows)
+<br><br>
+## 3. The very basics
+### Simple Caluations
+```{r}
+2 + 2
+```
+
+```{r}
+10/2
+```
+
+### Assignment
+We assign values to variables by using `<-`<br>
+Assigning a, b, and c
+```{r}
+a <- 2 + 2
+b <- 10 + 2
+c <- 4 + 12
+```
+
+## Creating d, which is a + b
+```{r}
+d <- a + b
+d
+```
+<br><br>
+
+## 4. Exploring Data<br>
+### `mtcars` data
+This data is pre-installed in R, and provides a quick way to fiddle around
+with coding.
+
+We can see the data by simply typing `mtcars`
+```{r}
+mtcars
+```
+
+
+If you want to see less rows you can use the function `head`
+```{r}
+head(mtcars)
+```
+
+
+### `pressure` data
+We can see that there are only two variables in the pressure data
+```{r}
+head(pressure)
+```
+<br><br>
+
+## 5. Graphing Data
+We can use the `plot` function to create a scatter plot for the `pressure` data 
+
+```{r}
+plot(pressure)
+```
+<br><br>
+
+## 6. A Note on Arguments 
+
+Notice that functions in R always have () beside them<br>
+head(mtcars)<br>
+plot(pressure)<br>
+<br>
+In R, we put our arguments (which are extra things we want the argument to do)
+inside these parentheses.
+
+<br><br>
+## 7. Intro to ggplot library and functions
+Remember to make sure ggplot is loaded into R.<br>
+You can do this by running the first chunk of this document, where it has the
+code `library(ggplot2)`<br>
+<br>
+We want to plot how miles per galon `mpg` is related to horsepower `hp`.
+And then we want to split this up by cylnders `cyl`.<br><br>
+
+for ggplot, our first argument will be the dataset `mtcars`
+```{r}
+ggplot(mtcars)
+```
+<br><br>
+
+#### aes() function for stating your x and y axis
+Within the ggplot() function, we'll set up our parameters by using the `aes()` function
+aes stands for asthetic. For this function, we want to define the x and y axis.
+
+The x-axis will be `hp` and the y-axis will be `mpg`
+```{r}
+ggplot(mtcars, aes(x = hp, y = mpg))
+```
+<br><br>
+
+### The power of `+`
+### Adding features to your ggplot graph using `+`
+
+We can add new features by using other functions that are part of the ggplot 
+library.
+
+We do this by using the `+` sign
+
+<br><br>
+####  geom() function for stating the kind of graph you want
+
+geom stands for geometric unit.<br>
+
+Now let's use the `geom` family of functions to state what kind of graph we want.<br>
+
+We want a scatterplot, so we are going to use the function `geom_point()`<br>
+
+No arguments are required for `geom_point()`
+```{r}
+ggplot(mtcars, aes(x = hp, y = mpg)) + 
+ geom_point() 
+```
+<br><br>
+
+####  theme() function for modifying components of your graph
+
+let's set the size of the text by 20 using `text = element_text(size = 20)`
+```{r}
+ggplot(mtcars, aes(x = hp, y = mpg)) + 
+  geom_point() + 
+  theme(text = element_text(size = 20))
+```
+<br><br>
+
+#### labs() function for labeling your graph
+
+```{r}
+ggplot(mtcars, aes(x = hp, y = mpg)) + 
+ geom_point() + 
+  theme(text = element_text(size = 20)) +
+  labs(x = "Horsepower", y = "MPG")
+```
+<br><br>
+
+#### scale_color_gradient() function for using a color gradient on mpg
+
+We want the low mpg to be blue and the high mpg to be red.<br>
+
+IMPORTANT! In order to make this function work, you have to state which variable
+you want it to color. Let's color `mpg`. <br>
+
+In order to state this, we have to go back to the `aes()` function and write an additional argument. Remember, arguments are separated by `,`<br>
+
+So your aes code should look like this now `aes(x = hp, y = mpg, color = mpg)`
+```{r}
+ggplot(mtcars, aes(x = hp, y = mpg, color = mpg)) + 
+ geom_point() + 
+  theme(text = element_text(size = 20)) +
+  labs(x = "Horsepower", y = "MPG") +
+  scale_color_gradient(low = "red", high = "blue")
+```
+<br><br>
+
+#### facet_grid() function splitting up the graph by a group
+
+We want to split our graph up by the variable `cyl`<br>
+
+use `.~cyl` to get a horizontal verison 
+```{r}
+ggplot(mtcars, aes(x = hp, y = mpg, color = mpg)) + 
+ geom_point() + 
+  theme(text = element_text(size = 20)) +
+  labs(x = "Horsepower", y = "MPG") +
+  scale_color_gradient(low = "red", high = "blue") +
+  facet_grid(.~cyl)
+```
+<br><br>
+
+use `cyl~.` to get a vertical verison.
+
+```{r}
+ggplot(mtcars, aes(x = hp, y = mpg, color = mpg)) + 
+ geom_point() + 
+  theme(text = element_text(size = 20)) +
+  labs(x = "Horsepower", y = "MPG") +
+  scale_color_gradient(low = "red", high = "blue") +
+  facet_grid(cyl~.)
+```
+<br><br>
+
+### 8. Learning More About Libraries and Functions
+
+If you want to see more information about what you can do with a library like
+ggplot2, you can put `?` in front of the name of the library.
+
+```{r}
+?ggplot2
+```
+<br><br>
+If you want to know more about how to use a specific function
+put a ? in front of the function name
+```{r}
+?ggplot()
+```
+<br><br>
+You can even do this with sub-functions, like `element_text()`
+```{r}
+?element_text()
+```
+
+
