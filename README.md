@@ -13,7 +13,7 @@ Thursdays, 11am-12pm PSB Conference Room
 This workshop will teach you how to use R to wrangle, analyze, and visualize education data. We will specifically focus on exploring clickstream data, which are timestamped events of students' clicks events within a Learning Management System (LMS), in order to gain insights into students'
 learning behaviors in an online Physics course. 
 
-Our hope is that this workshop gets you excited about using R and R-Studio and the concepts you learn can be easily transferable to your own research projects.
+Our hope is that this workshop gets you excited about using R and R-Studio and that you can begin implementing what you learn in your own research projects.
 
 To access the workshop lessons, open the R-Markdown files (e.g., Lesson_1.md) within this repository. I will upload the notebooks after the end of each session. 
 
