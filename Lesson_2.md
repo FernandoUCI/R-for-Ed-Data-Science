@@ -4,7 +4,7 @@ author: "Fernando Rodriguez"
 date: "1/17/2019"
 output: html_document
 editor_options: 
-  chunk_output_type: inline
+  output: rmarkdown::github_document
 ---
 
 ```{r setup, include=FALSE}
