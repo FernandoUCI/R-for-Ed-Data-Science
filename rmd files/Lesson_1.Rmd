@@ -47,7 +47,7 @@ control + alt + i (windows)<br>
 
 Each chunk of code can be run individually.
 ```{r}
-3 + 3
+a <- 3 + 3
 ```
 
 ### Running chunnks
