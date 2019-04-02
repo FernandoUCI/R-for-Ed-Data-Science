@@ -11,7 +11,7 @@ Thursdays, 11am-12pm PSB Conference Room
 
 R is very powerful statistical programming language, and it has several advantages over using STATA or SPSS. The most obvious being that R is completely free! Other advantages include the ability to work with different datasets simultaneously, good version control features, and an amazing library for visualizing data. 
 
-This workshop will teach you how to use R to wrangle, analyze, and visualize education data. In doing so, you will also learn how to document an entire research project using R-Markdown. Once we become more familiar with the ins and outs of R, we will devote the latter class lessons building interactive data dashboards. Much of our lessons will focus on an dataset from an online physics course, which contains survey, gradebook, and clickstream data. 
+This workshop will teach you how to use R to wrangle, analyze, and visualize education data. In doing so, you will also learn how to document an entire research project using R-Markdown. Once we become more familiar with the ins and outs of R, we will devote the latter class lessons building interactive data dashboards. Much of our lessons will focus on exploring a dataset from an online physics course, which contains survey, gradebook, and clickstream data. 
 
 Our hope is that this workshop gets you excited about using R and R-Studio and that you can begin implementing what you learn in your own research projects.
 
