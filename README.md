@@ -17,8 +17,6 @@ Our hope is that this workshop gets you excited about using R and R-Studio and t
 
 To access the workshop lessons, open the R-Markdown files (e.g., Lesson_1.md) within this repository. I will upload the notebooks after the end of each session. 
 
-In order to access the screen recordings of the lessons, email Fernando Rodriguez (fernanr1@uci.edu).
-
 
 ## Getting Started
 ### Installing R
@@ -36,7 +34,11 @@ https://www.rstudio.com/products/rstudio/download/#download
 Install the free version of RStudio Desktop (toward the bottom of the webpage)
 
 
+### Workshop Videos
+In order to access the recordings of the workshops, please email Fernando Rodriguez (fernanr1@uci.edu).
 
+
+### Workshop Schedule
 You can find the workshop schedule <a href="https://docs.google.com/document/d/13N38rjaWh4XjXWVKmFG0cGPWmdUQ3tJROgfk5Ksgfd8/edit?usp=sharing" target="_blank">here</a>.
 
 
