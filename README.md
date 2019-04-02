@@ -19,13 +19,15 @@ To access the workshop lessons, open the R-Markdown files (e.g., Lesson_1.md) wi
 
 In order to access the screen recordings of the lessons, email Fernando Rodriguez (fernanr1@uci.edu).
 
-### Getting Started
-#### Installing R
+
+## Getting Started
+### Installing R
 You will first need to install R
 R installation link:
 https://cran.r-project.org/
 
-#### Installing R-Studio
+
+### Installing R-Studio
 R-Studio is a powerful graphical user interface for working with the R. We will primarily be using R-Studio to learn R in this workshop. 
 
 R-Studio installation link:
@@ -38,7 +40,8 @@ Install the free version of RStudio Desktop (toward the bottom of the webpage)
 You can find the workshop schedule <a href="https://docs.google.com/document/d/13N38rjaWh4XjXWVKmFG0cGPWmdUQ3tJROgfk5Ksgfd8/edit?usp=sharing" target="_blank">here</a>.
 
 
-## Github Author
+## Author
 **Fernando Rodriguez** https://github.com/FernandoUCI
 
-
+## Funding
+This workshop is supported by the National Science Foundation grant, Investigating Virtual Learning Environments (DUE# 1535300).
