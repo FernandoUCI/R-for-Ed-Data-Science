@@ -2,7 +2,7 @@
 title: "Lesson 3"
 author: "Fernando Rodriguez"
 date: "1/24/2019"
-output: html_document
+output: rmarkdown::github_document
 editor_options: 
   chunk_output_type: inline
 ---
@@ -20,30 +20,30 @@ library(readr) # for reading in data
 
 # 1. Import demographic data using read.csv()
 ```{r}
-demog <- read.csv("/Volumes/GoogleDrive/My Drive/Intro to R Workshop - Winter 2019/Data Files/Physics Course Demo Data.csv", header = TRUE)
+demog <- read.csv("/Volumes/GoogleDrive/My Drive/R Workspace/R-for-Ed-Data-Science/Data/Physics Course Demo Data.csv", header = TRUE)
 ```
 
 run dfSummary()
 ```{r}
-view(dfSummary(demog))
+print(dfSummary(demog), method = 'browser')
 ```
 
 We need to use the na.strings argument to get correct NAs
 
 na.string replaces values in your csv file with NAs
 ```{r}
-demog <- read.csv("/Volumes/GoogleDrive/My Drive/Intro to R Workshop - Winter 2019/Data Files/Physics Course Demo Data.csv", header = TRUE, na.strings = "")
+demog <- read.csv("/Volumes/GoogleDrive/My Drive/R Workspace/R-for-Ed-Data-Science/Data/Physics Course Demo Data.csv", header = TRUE, na.strings = "")
 ```
 
 ```{r}
-view(dfSummary(demog))
+print(dfSummary(demog), method = 'browser')
 ```
 
 
 # importing demographic data using read_csv()
 ```{r}
-demog2 <- read_csv("Google Drive File Stream/My Drive/Intro to R Workshop - Winter 2019/Data Files/Physics Course Demo Data.csv")
-View(demog2)
+demog2 <- read_csv("/Volumes/GoogleDrive/My Drive/R Workspace/R-for-Ed-Data-Science/Data/Physics Course Demo Data.csv")
+# View(demog2)
 ```
 
 compare demog and demog2
@@ -57,15 +57,15 @@ str(demog2)
 
 # Subsetting
 
-subset()
+subset() <br>
 
-arguments
->
-<
->=
-<=
-==
-!= is not
+arguments <br>
+> <br>
+< <br>
+>= <br>
+<= <br>
+== <br>
+!= (is not) <br>
 
 ```{r}
 demog2_ss_male <-  subset(demog2, gender == "Male")
