@@ -1,0 +1,215 @@
+---
+title: "Lessson_7"
+author: "Fernando Rodriguez"
+date: "2/21/2019"
+output:
+  pdf_document: default
+  html_document: default
+editor_options:
+  chunk_output_type: inline
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+1. Create lesson 8 R-Markdown
+2. Install following packages
+  - install.packages("rforcats")ß
+  - install.packages("kableExtra")
+  - install.packages("psych")
+3. Load libraries below
+4. Load 'Physics Course GB SV DEMO data.csv' as 'fulldata'
+
+# 0a. Load Libraries
+```{r}
+library(readr) # for reading in data
+library(ggplot2) # for plotting
+# library(summarytools) # for summarizing data
+library(dplyr) # for selecting and filtering
+# library(forcats) # for working with categorical variables
+# library(kableExtra) # for making tables
+# library(psych) # for doing descriptives and analyses
+```
+
+
+# 0b. Load data
+```{r}
+fulldata <- read_csv("/Volumes/GoogleDrive/My Drive/Intro to R Workshop - Winter 2019/Data Files/Physics Course GB SV DEMO CLICK Data.csv")
+```
+
+# Vectors
+a basic data structure containing elements of the same type.
+Vectors are one dimensional arrays.
+
+# using Vectors
+
+We have focused on the tidyverse way to select and subset our rows and columns.
+
+However the baseR way of doing this uses, what we call vectors.
+
+Two types of vectors
+Atomic vectors: 
+logical, integer, double (double precision floating point numbers, character, complex, and raw
+atomic vectors are homogeonous (they are the same type)
+
+Lists (sometimes called recursive vectors) because lists can contain other lists
+Lists are heterogenous (can be different atomic vectors)
+
+We cam make a list using the baseR list() function
+```{r}
+list1 <- list(1, 4, 6, 7, 8, 9)
+```
+
+
+
+NULL is used to represent absence of a vector and is often treated as a lenghth 0
+vector
+
+
+Vectors have 2 key properties
+
+1. types (what type of vector it is)
+We can see this by using typeof()
+
+
+
+# the default storage for integers are the double type
+```{r}
+typeof(353)
+
+typeof(1)
+
+typeof(1.3)
+```
+
+
+```{r}
+typeof(fulldata$tot_click)
+```
+
+
+```{r}
+typeof(fulldata$gender)
+```
+
+```{r}
+typeof(list1)
+```
+
+2. length
+how long a vector is
+```{r}
+length(fulldata$tot_click)
+```
+
+We see that the length of each numeric value is the independent values in a
+vector or list
+```{r}
+length(1.3)
+```
+
+```{r}
+length(list1)
+```
+
+# remember that lists can be combinations of numeric and string character values
+```{r}
+list2 <- list(2, "hello", 2.2)
+
+length(list2)
+```
+
+
+```{r}
+length(fulldata$tot_click)
+```
+
+
+## Character Vectors
+For characters, the length is 1 for every enclosed unit "" 
+```{r}
+char1 <- ("hello how are you")
+typeof(char1)
+
+length(char1)
+```
+
+
+This is the same for vectors of characters
+```{r}
+typeof(fulldata$gender)
+
+length(fulldata$gender)
+```
+
+
+# Naming Vectors
+
+You can actually name vectors
+```{r}
+list3 <- c(x = 1, y = 2)
+
+list3
+```
+
+subsetting vectors
+
+We used the filter() function in dplyr (deeplyer) 
+
+[ is the subsetting function,
+
+and is use like this 
+x[a]
+
+There are 4 types of things you can subset vectors with
+
+# First, lets create a vector of strings
+c() is a funciton that returns a vector (a one dimensional array)
+```{r}
+x <- c("one", "two", "apple", "four")
+
+typeof(x)
+```
+
+We can filter out specific characters in our vector x
+each character in our vector x is indexed, starting at 1
+
+```{r}
+x[c(1, 3)]
+```
+
+you can repeat positions to make longer outputs as well
+```{r}
+x[c(1, 3, 4, 1, 1, 2, 2, 2, 2)]
+```
+
+
+negative values drop the lements at the specified position
+```{r}
+x[c(-1, -3)]
+```
+
+You cannot mix positive and negative subsetting values
+```{r}
+# x[c(-1, 3)]
+```
+
+```{r}
+
+```
+
+
+
+Piping
+%>%
+
+shortcut method for performing data filtering, selecting, etc.
+
+%>% basicially states 'then do this'
+try to follow the logic of how you already work with data
+```{r}
+fulldata %>%
+  filter(gender == "Male") %>%
+  ggplot(aes(x = fulltimestatus, y = grade_finalscore)) + geom_boxplot()
+```
+

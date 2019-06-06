@@ -1,0 +1,90 @@
+---
+title: "Lesson 3"
+author: "Fernando Rodriguez"
+date: "1/24/2019"
+output: rmarkdown::github_document
+editor_options: 
+  chunk_output_type: inline
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# 0. Load Libraries
+```{r}
+library(ggplot2) # for graphing
+library(summarytools) # for getting data summaries
+library(readr) # for reading in data
+```
+
+# 1. Import demographic data using read.csv()
+```{r}
+demog <- read.csv("/Volumes/GoogleDrive/My Drive/R Workspace/R-for-Ed-Data-Science/Data/Physics Course Demo Data.csv", header = TRUE)
+```
+
+run dfSummary()
+```{r}
+print(dfSummary(demog), method = 'browser')
+```
+
+We need to use the na.strings argument to get correct NAs
+
+na.string replaces values in your csv file with NAs
+```{r}
+demog <- read.csv("/Volumes/GoogleDrive/My Drive/R Workspace/R-for-Ed-Data-Science/Data/Physics Course Demo Data.csv", header = TRUE, na.strings = "")
+```
+
+```{r}
+print(dfSummary(demog), method = 'browser')
+```
+
+
+# importing demographic data using read_csv()
+```{r}
+demog2 <- read_csv("/Volumes/GoogleDrive/My Drive/R Workspace/R-for-Ed-Data-Science/Data/Physics Course Demo Data.csv")
+# View(demog2)
+```
+
+compare demog and demog2
+```{r}
+str(demog)
+```
+
+```{r}
+str(demog2)
+```
+
+# Subsetting
+
+subset() <br>
+
+arguments <br>
+> <br>
+< <br>
+>= <br>
+<= <br>
+== <br>
+!= (is not) <br>
+
+```{r}
+demog2_ss_male <-  subset(demog2, gender == "Male")
+```
+
+I want to make a bar chart with just male and females
+```{r}
+demog_gender <- subset(demog2, gender == "Female" | gender == "Male")
+```
+
+
+# Create a bar chart using ggplot
+```{r}
+ggplot(demog_gender, aes(x = gender)) + geom_bar(fill = 'red', alpha = .5) + facet_grid(.~firstgenerationflag)
+```
+
+
+Let's exclude the MDT and NAT
+I want to make a bar chart with just male and females
+```{r}
+demog_gender <- subset(demog2, gender == "Female" | gender == "Male")
+```
