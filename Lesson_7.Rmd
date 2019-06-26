@@ -2,21 +2,19 @@
 title: "Lessson_7"
 author: "Fernando Rodriguez"
 date: "2/21/2019"
-output: html_document
-editor_options: 
-  chunk_output_type: inline
+output: github_document
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-1. Create lesson 7 R-Markdown
-2. Install following packages
-  - install.packages("rforcats")ß
-  - install.packages("kableExtra")
-  - install.packages("psych")
-3. Load libraries below
-4. Load 'Physics Course GB SV DEMO data.csv' as 'fulldata'
+1. Create lesson 7 R-Markdown<br>
+2. Install following packages<br>
+    - install.packages("rforcats")<br>
+    - install.packages("kableExtra")<br>
+    - install.packages("psych")<br>
+3. Load libraries below<br>
+4. Load 'Physics Course GB SV DEMO data.csv' as 'fulldata'<br>
 
 # 0a. Load Libraries
 ```{r}
@@ -177,10 +175,6 @@ tableexample2
 ```
 
 
-```{r}
-kable(tableexample2)
-```
-
 ## Using the kable_styling() function and bootstrap_options arguments within kableExtra..
 - striped
 - hover
@@ -190,28 +184,28 @@ kable(tableexample2)
 
 
 ```{r}
-kable(tableexample2) %>% # this is a pipe, it just tells r "then do this"
-  kable_styling(bootstrap_options = c("striped"))
+# kable(tableexample2) %>% # this is a pipe, it just tells r "then do this"
+#  kable_styling(bootstrap_options = c("striped"))
 ```
 
 ```{r}
-kable(tableexample2) %>% # this is a pipe, it just tells r "then do this"
-  kable_styling(bootstrap_options = c("striped", "hover"))
+# kable(tableexample2) %>% # this is a pipe, it just tells r "then do this"
+#  kable_styling(bootstrap_options = c("striped", "hover"))
 ```
 ```{r}
-kable(tableexample2) %>% # this is a pipe, it just tells r "then do this"
-  kable_styling(bootstrap_options = c("striped", "hover", "bordered"))
-```
-
-```{r}
-kable(tableexample2) %>% # this is a pipe, it just tells r "then do this"
-  kable_styling(bootstrap_options = c("striped", "hover", "bordered", "condensed"))
+# kable(tableexample2) %>% # this is a pipe, it just tells r "then do this"
+#  kable_styling(bootstrap_options = c("striped", "hover", "bordered"))
 ```
 
 ```{r}
-kable(tableexample2) %>% # this is a pipe, it just tells r "then do this"
-  kable_styling(bootstrap_options = c("striped", "hover", "bordered", "condensed"), 
-                full_width = FALSE)
+# kable(tableexample2) %>% # this is a pipe, it just tells r "then do this"
+#  kable_styling(bootstrap_options = c("striped", "hover", "bordered", "condensed"))
+```
+
+```{r}
+# kable(tableexample2) %>% # this is a pipe, it just tells r "then do this"
+#  kable_styling(bootstrap_options = c("striped", "hover", "bordered", "condensed"), 
+#                full_width = FALSE)
 ```
 
 

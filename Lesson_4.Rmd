@@ -2,9 +2,8 @@
 title: "Lesson_4"
 author: "Fernando Rodriguez"
 date: "1/31/2019"
-output: html_document
-editor_options: 
-  chunk_output_type: inline
+output: github_document
+
 ---
 
 ```{r setup, include=FALSE}
@@ -12,19 +11,20 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 # Lesson 4 
-to do
-		1. install.packages(“dplyr”)
-		2. load physics demographic data
-# Table of Contents 
-1. Revisiting Subsetting Data
-2. summarize() and table()
-3. Using dplyr() library
-	- filter()
-	- arrange()
-	- select()
-4. Recoding data
-5. dplyr() continued
-  - mutate()
+to do<br>
+		1. install.packages(“dplyr”)<br>
+		2. load physics demographic data<br>
+		
+# Table of Contents<br>
+1. Revisiting Subsetting Data<br>
+2. summarize() and table()<br>
+3. Using dplyr() library<br>
+	- filter()<br>
+	- arrange()<br>
+	- select()<br>
+4. Recoding data<br>
+5. dplyr() continued<br>
+  - mutate()<br>
 
 # 0a. Load Libraries
 ```{r}

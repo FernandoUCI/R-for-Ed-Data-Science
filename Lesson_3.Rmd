@@ -2,9 +2,7 @@
 title: "Lesson 3"
 author: "Fernando Rodriguez"
 date: "1/24/2019"
-output: rmarkdown::github_document
-editor_options: 
-  chunk_output_type: inline
+output: github_document
 ---
 
 ```{r setup, include=FALSE}
@@ -86,5 +84,11 @@ ggplot(demog_gender, aes(x = gender)) + geom_bar(fill = 'red', alpha = .5) + fac
 Let's exclude the MDT and NAT
 I want to make a bar chart with just male and females
 ```{r}
-demog_gender <- subset(demog2, gender == "Female" | gender == "Male")
+demog_gender2 <- subset(demog_gender, firstgenerationflag == "N" | gender == "Y")
 ```
+
+```{r}
+ggplot(demog_gender2, aes(x = gender)) + geom_bar(fill = 'red', alpha = .5) + facet_grid(.~firstgenerationflag)
+```
+
+

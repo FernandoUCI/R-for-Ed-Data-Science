@@ -2,19 +2,17 @@
 title: "Lesson_5"
 author: "Fernando Rodriguez"
 date: "2/7/2019"
-output: html_document
-editor_options: 
-  chunk_output_type: inline
+output: github_document
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-
-1. Create lesson 5 R-Markdown
-2.load readr, ggplot2, summarytools, and dplyr libraries 
-3. load physics demographic data
-4. Save survey and gradebook data to your current data folder
+To-Do<br>
+1. Create lesson 5 R-Markdown<br>
+2.load readr, ggplot2, summarytools, and dplyr libraries <br>
+3. load physics demographic data<br>
+4. Save survey and gradebook data to your current data folder<br>
 
 
 

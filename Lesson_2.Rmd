@@ -101,7 +101,7 @@ view(dfSummary(demog, style = 'rmarkdown'))
 Use these additional arguments to have the table display correctly when 
 knitting your R-Markdown
 ```{r}
-print(dfSummary(demog, graph.magnif = 0.65), method = 'render')
+print(dfSummary(demog, graph.magnif = 0.40), method = 'render')
 ```
 <br><br>
 
@@ -114,5 +114,5 @@ demog2 <- read.csv("/Volumes/GoogleDrive/My Drive/R Workspace/R-for-Ed-Data-Scie
 
 ### Re-running dfSummary
 ```{r}
-print(dfSummary(demog2, graph.magnif = 0.65), method = 'render')
+print(dfSummary(demog2, graph.magnif = 0.40), method = 'render')
 ```

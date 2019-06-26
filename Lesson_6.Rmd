@@ -2,21 +2,18 @@
 title: "Lesson_6"
 author: "Fernando Rodriguez, Ying Xu, Ha Nguyen"
 date: "2/14/2019"
-output: html_document
-editor_options: 
-  chunk_output_type: inline
+output: github_document
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-TO-DO Prior to Lesson
-1. Create lesson 6 R-Markdown
-2. load readr, ggplot2, summarytools, and dplyr libraries 
-3. load merged data
+TO-DO Prior to Lesson<br>
+1. Create lesson 6 R-Markdown<br>
+2. load readr, ggplot2, summarytools, and dplyr libraries <br>
+3. load merged data<br>
 
-final graph
 
 ## 0a. Load Libraries
 ```{r}
@@ -30,7 +27,7 @@ library(cowplot)
 ## 0b. Load our physics demographic data
 importing demographic data using read_csv()
 ```{r}
-fulldata <- read_csv("~/OneDrive - personalmicrosoftsoftware.uci.edu/R-workshop/Data/Physics Course GB SV DEMO data.csv")
+fulldata <- read_csv("/Volumes/GoogleDrive/My Drive/R Workspace/R-for-Ed-Data-Science/Data/Physics Course GB SV DEMO data.csv")
 ```
 
 # 1. Scatterplot using geom_point()
@@ -106,14 +103,16 @@ ggplot(fulldata_ss, aes(x = grade_lettergrade)) + geom_bar()
 
 ## 2d. Fill the bar graphs by another variables
 ```{r}
-barplot_color <- ggplot(fulldata_ss, aes(x=grade_lettergrade, fill=fulltimestatus)) + geom_bar()
+barplot_color <- ggplot(fulldata_ss, aes(x = grade_lettergrade, 
+                                         fill = fulltimestatus)) + geom_bar()
 barplot_color
 ```
 
 ## 2e. Add title, labels, and captions.
 
 ```{r}
-barplot_title <- barplot_color + labs(x="Grade", y = "Count", fill = "Full time status", caption = "Source: UCI Physic course data") + ggtitle ("Letter Grade Distribution by Full/Part Time Status ")
+barplot_title <- barplot_color + labs(x = "Grade", y = "Count", 
+                                      fill = "Full time status", caption = "Source: UCI Physic course data") + ggtitle("Letter Grade Distribution by Full/Part Time Status ")
 barplot_title
 
 ```
@@ -126,7 +125,7 @@ barplot_theme
 
 ## 2g. Remove the gridline in barcharts
 ```{r}
-barplot_final <- barplot_theme + background_grid(major="none")
+barplot_final <- barplot_theme + background_grid(major = "none")
 barplot_final
 ```
 

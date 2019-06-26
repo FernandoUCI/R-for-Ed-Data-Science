@@ -2,33 +2,22 @@
 title: "Lessson_7"
 author: "Fernando Rodriguez"
 date: "2/21/2019"
-output:
-  pdf_document: default
-  html_document: default
-editor_options:
-  chunk_output_type: inline
+output: github_document
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-1. Create lesson 8 R-Markdown
-2. Install following packages
-  - install.packages("rforcats")ß
-  - install.packages("kableExtra")
-  - install.packages("psych")
-3. Load libraries below
-4. Load 'Physics Course GB SV DEMO data.csv' as 'fulldata'
+To-Do<br>
+1. Create lesson 8 R-Markdown<br>
+2. Load libraries below<br>
+3. Load 'Physics Course GB SV DEMO data.csv' as 'fulldata'<br>
 
 # 0a. Load Libraries
 ```{r}
 library(readr) # for reading in data
 library(ggplot2) # for plotting
-# library(summarytools) # for summarizing data
 library(dplyr) # for selecting and filtering
-# library(forcats) # for working with categorical variables
-# library(kableExtra) # for making tables
-# library(psych) # for doing descriptives and analyses
 ```
 
 
@@ -37,11 +26,11 @@ library(dplyr) # for selecting and filtering
 fulldata <- read_csv("/Volumes/GoogleDrive/My Drive/Intro to R Workshop - Winter 2019/Data Files/Physics Course GB SV DEMO CLICK Data.csv")
 ```
 
-# Vectors
+# 1. Vectors
 a basic data structure containing elements of the same type.
 Vectors are one dimensional arrays.
 
-# using Vectors
+## Using Vectors
 
 We have focused on the tidyverse way to select and subset our rows and columns.
 
@@ -61,17 +50,15 @@ list1 <- list(1, 4, 6, 7, 8, 9)
 ```
 
 
-
+## NULL
 NULL is used to represent absence of a vector and is often treated as a lenghth 0
 vector
 
+## Vector Properties
+Vectors have 2 key properties: 1) `type` nd 2) `length`
 
-Vectors have 2 key properties
-
-1. types (what type of vector it is)
+1. `types` (what type of vector it is)
 We can see this by using typeof()
-
-
 
 # the default storage for integers are the double type
 ```{r}
@@ -96,8 +83,8 @@ typeof(fulldata$gender)
 typeof(list1)
 ```
 
-2. length
-how long a vector is
+2. `length`
+How long a vector is
 ```{r}
 length(fulldata$tot_click)
 ```
@@ -112,7 +99,7 @@ length(1.3)
 length(list1)
 ```
 
-# remember that lists can be combinations of numeric and string character values
+Remember that lists can be combinations of numeric and string character values
 ```{r}
 list2 <- list(2, "hello", 2.2)
 
@@ -125,7 +112,7 @@ length(fulldata$tot_click)
 ```
 
 
-## Character Vectors
+# Character Vectors
 For characters, the length is 1 for every enclosed unit "" 
 ```{r}
 char1 <- ("hello how are you")
@@ -152,7 +139,7 @@ list3 <- c(x = 1, y = 2)
 list3
 ```
 
-subsetting vectors
+# Subsetting vectors
 
 We used the filter() function in dplyr (deeplyer) 
 
@@ -163,7 +150,8 @@ x[a]
 
 There are 4 types of things you can subset vectors with
 
-# First, lets create a vector of strings
+
+First, lets create a vector of strings
 c() is a funciton that returns a vector (a one dimensional array)
 ```{r}
 x <- c("one", "two", "apple", "four")
@@ -194,13 +182,9 @@ You cannot mix positive and negative subsetting values
 # x[c(-1, 3)]
 ```
 
-```{r}
-
-```
 
 
-
-Piping
+# Piping %>%
 %>%
 
 shortcut method for performing data filtering, selecting, etc.
