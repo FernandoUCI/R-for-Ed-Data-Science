@@ -2,28 +2,19 @@
 title: "R Workshop for Education Data Science Lesson 1"
 author: "Fernando Rodriguez"
 date: "1/10/2019"
-output: 
-    rmdformats::readthedown:
-    self_contained: true
-    thumbnails: true
-    lightbox: true
-    gallery: false
-    toc: false
-editor_options: 
-    chunk_output_type: inline
+output: github_document
 ---
 
 
 
-# 1. Loading Libraries
-First, let's load the libraries you will use for this lesson. This is the first
-thing you should do when writing an R-Markdown document. That way, you ensure
-that you load all of the necessary libraries prior to running code
+# 1. Loading Packages
+First, let's load the packages (A.K.A., libraries) you will use for this lesson. This is the first thing you should do when writing an R-Markdown document. That way, you ensure that you load all of the necessary libraries prior to running code. 
 ```{r}
-# install.libraries("gglot2") <- installing libraries require double qoutations ""
-# install.libraries("rmdformats")
+# install.packages("ggplot2")
+# installing libraries require double qoutations ""
+
 library(ggplot2) # <- loading libraries doesn't require double qoutations
-library(rmdformats) # for displaying the code in various html styles
+
 ```
 <br><br>
 
